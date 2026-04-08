@@ -1,0 +1,93 @@
+<div class="app">
+  <h1>🌍 Country Weather App</h1>
+</div>
+<div class="container">
+  <button class="dark-toggle" (click)="toggleDarkMode()">
+    Toggle Dark Mode
+  </button>
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Enter city or country "
+      [(ngModel)]="searchInput"
+      (keyup.enter)="search()"
+    />
+    <button (click)="search()">Search</button>
+  </div>
+
+  <p *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </p>
+
+  <div *ngIf="weatherData && countryData" class="result-card">
+    <h2>{{ countryData.name.common }}</h2>
+
+    <img [src]="countryData.flags.png" width="120" alt="Country Flag" />
+    <p class="region">📍 {{ countryData.region }}</p>
+    <p class="population">👥 {{ countryData.population | number }}</p>
+
+    <hr />
+
+    <h3>{{ weatherData.name }}</h3>
+
+    <div class="weather-info">
+      <div class="weather-item">
+        <img
+          [src]="
+            'https://openweathermap.org/img/wn/' +
+            weatherData.weather[0].icon +
+            '@2x.png'
+          "
+          alt="Weather icon"
+        />
+
+        <p class="description">
+          {{ weatherData.weather[0].description | titlecase }}
+        </p>
+      </div>
+
+      <div class="weather-item">
+        🌡️
+        <span class="value"> {{ weatherData.main.temp }} °C </span>
+        <small>Temperature</small>
+      </div>
+
+      <div class="weather-item">
+        💧
+        <span class="value"> {{ weatherData.main.humidity }} % </span>
+        <small>Humidity</small>
+      </div>
+    </div>
+
+    <button (click)="goToDetails(countryData.name.common)">View Details</button>
+  </div>
+
+  <div class="forecast" *ngIf="forecast.length && forecast.length > 0 && !loading">
+    <h3 class="forecast-title">5 - Day Forecast</h3>
+
+    <div class="forecast-container">
+      <div class="forecast-card" *ngFor="let day of forecast">
+        
+        <div class="day">{{ day.dt * 1000 | date: 'EEE' }}</div>
+        <div class="icon-wrapper">
+        <img
+          *ngIf="day.weather?.length"
+          [src]="
+            'https://openweathermap.org/img/wn/' +
+            day.weather[0].icon +
+            '@2x.png'
+          "
+          ;
+          alt="icon"
+        />
+        </div>
+
+        <p class="temp">{{ day.main.temp | number: "1.0-0" }} °C</p>
+
+        <small class="desc">
+          {{ day.weather[0].description | titlecase }}
+        </small>
+      </div>
+    </div>
+  </div>
+</div>

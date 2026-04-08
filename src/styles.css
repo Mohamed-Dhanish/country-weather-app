@@ -1,0 +1,196 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app {
+  max-width: 420px;
+  margin: 30px auto;
+  text-align: center;
+  
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    text-align: center;
+    
+}
+
+.search-box {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     margin-bottom: 15px;
+}
+
+
+
+
+.search-box input {
+    padding: 8px 10px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.search-box button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #0056b3;
+}
+
+.error {
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+.weather-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0 , 0, 0.15);
+}
+
+.flag {
+    width: 120px;
+    margin: 10px 0;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.weather-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.weather-item img {
+    width: 60px;
+}
+
+.desc {
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.details-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #1e7e34;
+}
+
+
+body.dark-theme {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .weather-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark-toggle {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.temp {
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+
+.forecast {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.forecast-day {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 60px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-theme .forecast-day {
+  background: #1e1e1e;
+}
+
+.forecast-day img {
+  width: 50px;
+}
+
+.day {
+  font-weight: bold;
+}
+
+.forecast-temp {
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.forecast-desc {
+  font-size: 12px;
+  text-transform: capitalize;
+}

@@ -1,0 +1,13 @@
+<div *ngIf="country">
+  <h2>{{ country.name.common }}</h2>
+  <p>Region: {{ country.region }}</p>
+  <p>Population: {{ country.population | number }}</p>
+
+  <div *ngIf="weather">
+    <hr>
+    <p>Temperature: {{ weather.main.temp }} °C</p>
+    <p>Weather: {{ weather.weather[0].description }}</p>
+    <p>Humidity: {{ weather.main.humidity }} %</p>
+  </div>
+</div>
+
